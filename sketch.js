@@ -279,7 +279,7 @@ window.onload = () => {
     const deleteBtnDial = document.getElementById("deleteBtnDial"); 
 
     const checkCallButtonState = () => {
-        if (dialedNumber === "995") {
+        if (dialedNumber === "108") {
             callBtn.disabled = false;
             callBtn.style.opacity = 1.0; 
         } else {
@@ -302,7 +302,7 @@ window.onload = () => {
         if (e) e.preventDefault();
         dialedNumber = dialedNumber.slice(0, -1);
         if (dialedNumber.length === 0) {
-            dialDisplay.textContent = "995";
+            dialDisplay.textContent = "108";
             dialDisplay.classList.add("empty"); 
         } else {
             dialDisplay.textContent = dialedNumber;
@@ -335,7 +335,7 @@ window.onload = () => {
     deleteBtnDial.addEventListener('touchstart', deleteDigit);
 
     checkCallButtonState();
-    dialDisplay.textContent = "995";
+    dialDisplay.textContent = "108";
     dialDisplay.classList.add("empty"); 
 
     // ========================================
