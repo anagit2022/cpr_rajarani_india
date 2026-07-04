@@ -1257,7 +1257,10 @@ function handle_inactivity() {
 function handle_live() {
     if (bpm <= 120 && bpm >= 100) {
         progress += goodfillRate;
-        good_compression = good_compression + 1;
+        if (good_compression < maxTotalCompressions) {
+            good_compression++;
+        }
+
         angle = 0;
     } else if (bpm > 121) {
         angle = 60;
