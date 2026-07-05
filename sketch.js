@@ -282,7 +282,7 @@ window.onload = () => {
     const deleteBtnDial = document.getElementById("deleteBtnDial"); 
 
     const checkCallButtonState = () => {
-        if (dialedNumber === "108") {
+        if (dialedNumber === "112") {
             callBtn.disabled = false;
             callBtn.style.opacity = 1.0; 
         } else {
@@ -305,7 +305,7 @@ window.onload = () => {
         if (e) e.preventDefault();
         dialedNumber = dialedNumber.slice(0, -1);
         if (dialedNumber.length === 0) {
-            dialDisplay.textContent = "108";
+            dialDisplay.textContent = "112";
             dialDisplay.classList.add("empty"); 
         } else {
             dialDisplay.textContent = dialedNumber;
@@ -338,7 +338,7 @@ window.onload = () => {
     deleteBtnDial.addEventListener('touchstart', deleteDigit);
 
     checkCallButtonState();
-    dialDisplay.textContent = "108";
+    dialDisplay.textContent = "112";
     dialDisplay.classList.add("empty"); 
 
     // ========================================
@@ -366,6 +366,7 @@ window.onload = () => {
         mic.start();
         begin1.style.display = "none";
         gender.style.display = "flex";
+      logSession();
     };
     beginBtn.onclick = handleBegin;
     beginBtn.addEventListener('touchstart', handleBegin);
