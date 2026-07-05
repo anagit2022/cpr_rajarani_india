@@ -40,6 +40,9 @@ let lastTouchElapsed = 0;
 // 
 let breathc = 0;
 let couldobserveb;
+// log data google app script
+const scriptURL = "https://script.google.com/macros/s/AKfycbxaYU4dBLGOPgxxboTum-yErORdXo8LxGp8cPjEz-1vspB-4Q8WmFfklge9l2NtVLma/exec";
+let sessionLogged = false;
 // play screen
 let playimg,heartimg,meterimg,arrowimg;
 function preload(){
@@ -1319,6 +1322,64 @@ function handle_performance() {
             }
         }
     }
+  logSession();
+}
+// log session in google sheets
+async function logSession() {
+
+    if (sessionLogged) return;
+    sessionLogged = true;
+
+    const now = new Date();
+
+    let country = "Unknown";
+
+    try {
+
+        const response = await fetch("https://ipapi.co/json/");
+        const location = await response.json();
+
+        country = location.country_name;
+
+    } catch (error) {
+
+        console.log("Couldn't get country");
+
+    }
+
+    const data = {
+
+        date: now.toLocaleDateString(),
+
+        time: now.toLocaleTimeString(),
+
+        country: country,
+
+        goodCompressions: good_compression,
+
+        targetCompressions: maxTotalCompressions
+
+    };
+
+    console.log("Logging:", data);
+
+    try {
+
+        const response = await fetch(scriptURL, {
+            method: "POST",
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.text();
+
+        console.log(result);
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
 }
 
 function reset() {
@@ -1346,6 +1407,7 @@ function reset() {
     maxTotalCompressions = floor(random(30, 50));
     task_time = 600 * maxTotalCompressions + 3000;
     currentState = "blank";
+  sessionLogged = false;
 }
 
 function windowResized() {
