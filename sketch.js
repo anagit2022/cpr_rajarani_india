@@ -41,7 +41,7 @@ let lastTouchElapsed = 0;
 let breathc = 0;
 let couldobserveb;
 // log data google app script
-const scriptURL = "https://script.google.com/macros/s/AKfycbxaYU4dBLGOPgxxboTum-yErORdXo8LxGp8cPjEz-1vspB-4Q8WmFfklge9l2NtVLma/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycby9Dmsysaez8CVJQ43mknbWuAaZGgx2aY-bqMJri5eInxd28j1cPVVH9zXhxlaLwqWR/exec";
 let sessionLogged = false;
 // play screen
 let playimg,heartimg,meterimg,arrowimg;
