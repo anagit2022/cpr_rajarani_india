@@ -738,7 +738,7 @@ window.onload = () => {
                     }, 8000);
                 }, 8000);
             }, 8000);
-        }, 10000);
+        }, 15000);
     };
     speakerbtn.onclick = handleSpeaker;
     speakerbtn.addEventListener('touchstart', handleSpeaker);
