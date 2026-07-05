@@ -88,7 +88,7 @@ function preload(){
 function setup() {
   breath_no = floor(random(11));
   console.log(breath_no);
-  maxTotalCompressions = floor(random(30, 50));
+  maxTotalCompressions = floor(random(30, 130));
   task_time = 600 * maxTotalCompressions+3000;
   mic = new p5.AudioIn();
   //mic.start();
