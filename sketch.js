@@ -441,6 +441,7 @@ window.onload = () => {
         dnotsafeAudio.play();
         checkdanger.style.display = "none";
         dnotsafeq.style.display = "flex";
+      logSession();
     };
     dnoBtn.onclick = handleDno;
     dnoBtn.addEventListener('touchstart', handleDno);
@@ -588,6 +589,7 @@ window.onload = () => {
             gasp_aud.stop();
             normal_breath_aud.stop();
         }, 10000);
+      logSession();
     };
     rnoBtn.onclick = handleRno;
     rnoBtn.addEventListener('touchstart', handleRno);
@@ -596,6 +598,7 @@ window.onload = () => {
         requestaedaud.play();
         checkbreathingq.style.display = "none";
         requestaed.style.display = "flex";
+      
     };
     bnoBtn.onclick = handleBno;
     bnoBtn.addEventListener('touchstart', handleBno);
@@ -606,6 +609,7 @@ window.onload = () => {
         could_you_see_breathing.currentTime = 0;
         checkbreathingq.style.display = "none";
         checkbreathingtypeq.style.display = "flex";
+      logSession();
     };
     byesBtn.onclick = handleByes;
     byesBtn.addEventListener('touchstart', handleByes);
