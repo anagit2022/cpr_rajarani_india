@@ -589,7 +589,7 @@ window.onload = () => {
             gasp_aud.stop();
             normal_breath_aud.stop();
         }, 10000);
-      logSession();
+      
     };
     rnoBtn.onclick = handleRno;
     rnoBtn.addEventListener('touchstart', handleRno);
@@ -1099,6 +1099,7 @@ function draw() {
             respondedaud.play();
             checkrAudio.pause();
             checkrAudio.currentTime = 0;
+          logSession();
         }
     }
 
