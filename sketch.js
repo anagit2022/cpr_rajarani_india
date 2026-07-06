@@ -366,7 +366,7 @@ window.onload = () => {
         mic.start();
         begin1.style.display = "none";
         gender.style.display = "flex";
-      logSession();
+      //logSession();
     };
     beginBtn.onclick = handleBegin;
     beginBtn.addEventListener('touchstart', handleBegin);
