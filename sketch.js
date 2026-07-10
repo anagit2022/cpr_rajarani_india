@@ -149,7 +149,8 @@ function showCompressionScore() {
 
 window.onload = () => {
     // --- Screen Element Definitions ---
-    const begin1 = document.getElementById("begin1");
+   const consent = document.getElementById("consent");  
+  const begin1 = document.getElementById("begin1");
     const gender = document.getElementById("gender");
     const intro = document.getElementById("intro");
     const checkdanger = document.getElementById("checkdanger");
@@ -221,6 +222,7 @@ window.onload = () => {
     promiselateslowranipress = document.getElementById("promiselateslowranipress");
 
     // --- Button Element Definitions ---
+    const consentBtn = document.getElementById("consentBtn");
     const beginBtn = document.getElementById("beginBtn");
     const beginBubBtn = document.getElementById("beginBubBtn");
     const rajaBtn = document.getElementById("rajaBtn");
@@ -361,7 +363,15 @@ window.onload = () => {
 
     // --- Event Listeners ---
 
-    const handleBegin = () => {
+   const handleConsent = () => {
+        consent.style.display = "none";
+        begin1.style.display = "flex";
+      //logSession();
+    };
+    consentBtn.onclick = handleConsent;
+    consentBtn.addEventListener('touchstart', handleConsent);
+    
+  const handleBegin = () => {
         userStartAudio();
         mic.start();
         begin1.style.display = "none";
