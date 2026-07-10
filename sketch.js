@@ -1481,6 +1481,10 @@ function windowResized() {
 
 function touchStarted() {
     mousePressed();
-    return false;
+    
+    // Only block default behavior if the p5 game screen is actively running
+    if (currentState === "play") {
+        return false;
+    }
 }
 
