@@ -210,71 +210,41 @@ display: flex;
     max-width:90px;
 }
 
-/* Bubble */
-
+/* QUESTION BUBBLE */
 .questionBubble{
     position:absolute;
-    top:12%;
-    left:50%;
-    transform:translateX(-50%);
-    width:min(88vw,360px);
+    top:22vh;          /* was 18vh */
+    width:88vw;
+    max-width:360px;
+    height:auto;
 }
 
-/* Group everything together */
-
-.questionContent{
-
-    position:absolute;
-
-    top:45%;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:min(76vw,300px);
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:18px;
-}
-
-/* Input */
-
+/* ANSWER INPUT */
 .questionInput{
-
-    width:100%;
-
+    position:absolute;
+    top:46vh;          /* was 48vh */
+    width:76vw;
+    max-width:300px;
     height:58px;
-
-    border:none;
-
-    border-radius:16px;
-
-    padding:14px;
-
-    font-size:22px;
-
-    box-sizing:border-box;
+    /* rest unchanged */
 }
 
-/* Buttons */
-
+/* I'M NOT SURE BUTTON */
 .questionButton{
-
-    width:100%;
-
+    position:absolute;
+    top:56vh;          /* was 63vh */
+    width:76vw;
+    max-width:300px;
     cursor:pointer;
 }
 
+/* NEXT BUTTON */
 .nextQuestion{
-
-    width:120px;
-
+    position:absolute;
+    top:67vh;          /* use top instead of bottom */
+    right:10vw;
+    width:28vw;
+    max-width:130px;
     cursor:pointer;
 }
 
