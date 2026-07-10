@@ -399,7 +399,7 @@ window.onload = () => {
     preAnswers.q1 = preq1input.value;
 
     preq1.style.display = "none";
-    preq2.style.display = "flex";
+    begin1.style.display = "flex";
 
 };
   preq1Next.onclick = handlePreQ1Next;
@@ -409,8 +409,8 @@ window.onload = () => {
 
     preAnswers.q1 = "Not sure";
 
-    preq1.style.display = "none";
-    preq2.style.display = "flex";
+    //preq1.style.display = "none";
+    //preq2.style.display = "flex";
 
 };
   preq1NotSure.onclick = handlePreQ1NotSure;
