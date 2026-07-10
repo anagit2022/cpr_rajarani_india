@@ -409,8 +409,8 @@ window.onload = () => {
 
     preAnswers.q1 = "Not sure";
 
-    //preq1.style.display = "none";
-    //preq2.style.display = "flex";
+    preq1.style.display = "none";
+    begin1.style.display = "flex";
 
 };
   preq1NotSure.onclick = handlePreQ1NotSure;
