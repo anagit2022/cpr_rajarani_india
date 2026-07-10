@@ -187,8 +187,8 @@ display: flex;
 position: absolute; 
 top: 5vh; 
 left: 5vw; } 
-#begin1 { 
-display: flex; /* show first screen by default */ 
+#consent { 
+  display: flex; /* show consent screen by default */ 
 }
 
 /* ========================================
