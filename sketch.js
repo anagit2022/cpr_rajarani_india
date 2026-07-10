@@ -408,15 +408,6 @@ window.onload = () => {
 
 });
 
-preq1NotSure.addEventListener("click", function () {
-
-    preq1input.value = "";
-
-    preq1input.classList.remove("selected");
-
-    preq1NotSure.classList.add("selected");
-
-});
 
   const handlePreQ1Next = () => {
 
@@ -431,12 +422,19 @@ preq1NotSure.addEventListener("click", function () {
 
   const handlePreQ1NotSure = () => {
 
+    // save answer
     preAnswers.q1 = "Not sure";
 
+    // clear input
+    preq1input.value = "";
+    preq1input.classList.remove("selected");
+
+    // highlight button
+    preq1NotSure.classList.add("selected");
 };
-  preq1NotSure.onclick = handlePreQ1NotSure;
-  preq1Next.addEventListener('touchstart', handlePreQ1NotSure);
-    
+
+preq1NotSure.addEventListener("click", handlePreQ1NotSure);
+preq1NotSure.addEventListener("touchstart", handlePreQ1NotSure);
   const handleBegin = () => {
         userStartAudio();
         mic.start();
