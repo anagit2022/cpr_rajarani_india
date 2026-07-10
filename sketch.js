@@ -393,6 +393,30 @@ window.onload = () => {
     };
     consentBtn.onclick = handleConsent;
     consentBtn.addEventListener('touchstart', handleConsent);
+    preq1input.addEventListener("input", function () {
+
+    if (preq1input.value.trim() !== "") {
+
+        preq1input.classList.add("selected");
+        preq1NotSure.classList.remove("selected");
+
+    } else {
+
+        preq1input.classList.remove("selected");
+
+    }
+
+});
+
+preq1NotSure.addEventListener("click", function () {
+
+    preq1input.value = "";
+
+    preq1input.classList.remove("selected");
+
+    preq1NotSure.classList.add("selected");
+
+});
 
   const handlePreQ1Next = () => {
 
