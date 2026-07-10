@@ -291,7 +291,7 @@ display: flex;
 
     position:absolute;
 
-    top:48vh;
+    top:50vh;
 
     width:76vw;
     max-width:300px;
@@ -308,7 +308,7 @@ display: flex;
 .nextQuestion{
 
     position:absolute;
-    top:54vh;
+    top:57vh;
     right:10vw;
 
     width:28vw;
