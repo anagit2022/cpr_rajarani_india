@@ -59,7 +59,7 @@ let lastTouchElapsed = 0;
 let breathc = 0;
 let couldobserveb;
 // log data google app script
-const scriptURL = "https://script.google.com/macros/s/AKfycbxb-KYymAabJgg82ibUMmhVLft_Db5K3BstoEGFVKCydDakEgrvf5VKSxmLdilfIbef/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbygqff9RJ6GnJyVJJ5WHOrKr_0bSps935NByi-5t9GrJBuO51yeOOU2hFJ83a8VXzdn/exec";
 let sessionLogged = false;
 // play screen
 let playimg,heartimg,meterimg,arrowimg;
@@ -1545,18 +1545,25 @@ async function logSession() {
     }
 
     const data = {
+    date: now.toLocaleDateString(),
+    time: now.toLocaleTimeString(),
 
-        date: now.toLocaleDateString(),
-        time: now.toLocaleTimeString(),
+    country: country,
+    state: state,
+    city: city,
 
-        country: country,
-        state: state,
-        city: city,
+    gender: genderState === 1 ? "Raja" : "Rani",
 
-        goodCompressions: good_compression,
-        targetCompressions: maxTotalCompressions
+    goodCompressions: good_compression,
+    targetCompressions: maxTotalCompressions,
 
-    };
+    preQ1: preAnswers.q1,
+    preQ2: preAnswers.q2,
+    preQ3: preAnswers.q3,
+    preQ4: preAnswers.q4,
+    preQ5: preAnswers.q5,
+    preQ6: preAnswers.q6
+};
 
     console.log("Logging:", data);
 
