@@ -523,17 +523,6 @@ const preq3 = document.getElementById("preq3");
 
   const handlePreQ1Next = () => {
 
-    preAnswers.q1 = preq1input.value;
-
-    preq1.style.display = "none";
-    preq2.style.display = "flex";
-
-};
-  preq1Next.onclick = handlePreQ1Next;
-  preq1Next.addEventListener('touchstart', handlePreQ1Next);
-
-  const handlePreQ1Next = () => {
-
     if (preq1input.value.trim() !== "") {
         preAnswers.q1 = preq1input.value;
     }
@@ -543,6 +532,21 @@ const preq3 = document.getElementById("preq3");
 
     console.log(preAnswers.q1);
 };
+  preq1Next.onclick = handlePreQ1Next;
+  preq1Next.addEventListener('touchstart', handlePreQ1Next);
+const handlePreQ1NotSure = () => {
+
+    // save answer
+    preAnswers.q1 = "Not sure";
+
+    // clear input
+    preq1input.value = "";
+    preq1input.classList.remove("selected");
+
+    // highlight button
+    preq1NotSure.classList.add("selected");
+};
+
 
 preq1NotSure.addEventListener("click", handlePreQ1NotSure);
 preq1NotSure.addEventListener("touchstart", handlePreQ1NotSure);
