@@ -229,6 +229,10 @@ window.onload = () => {
   const preq1Next = document.getElementById("preq1Next");
  const preq1NotSure = document.getElementById("preq1NotSure");
  const preq2 = document.getElementById("preq2");
+const preq3 = document.getElementById("preq3");
+    const preq4 = document.getElementById("preq4");
+    const preq5 = document.getElementById("preq5");
+    const preq6 = document.getElementById("preq6");
   const begin1 = document.getElementById("begin1");
     const gender = document.getElementById("gender");
     const intro = document.getElementById("intro");
@@ -300,7 +304,7 @@ window.onload = () => {
     promiselateslowrani = document.getElementById("promiselateslowrani");
     promiselateslowranipress = document.getElementById("promiselateslowranipress");
     // setup quesions
-    //setup function call
+    //setup function call2
     setupQuestion({
     inputId: "preq2input",
     notSureId: "preq2NotSure",
@@ -309,6 +313,46 @@ window.onload = () => {
     nextScreenId: "preq3",
     answerObject: preAnswers,
     questionKey: "q2"
+});
+    // sq3
+    setupQuestion({
+    inputId: "preq3input",
+    notSureId: "preq3NotSure",
+    nextBtnId: "preq3Next",
+    currentScreenId: "preq3",
+    nextScreenId: "preq4",
+    answerObject: preAnswers,
+    questionKey: "q3"
+});
+    //sq4
+    setupQuestion({
+    inputId: "preq4input",
+    notSureId: "preq4NotSure",
+    nextBtnId: "preq4Next",
+    currentScreenId: "preq4",
+    nextScreenId: "preq5",
+    answerObject: preAnswers,
+    questionKey: "q4"
+});
+    //sq5
+    setupQuestion({
+    inputId: "preq5input",
+    notSureId: "preq5NotSure",
+    nextBtnId: "preq5Next",
+    currentScreenId: "preq5",
+    nextScreenId: "preq6",
+    answerObject: preAnswers,
+    questionKey: "q5"
+});
+    //sq6
+    setupQuestion({
+    inputId: "preq6input",
+    notSureId: "preq6NotSure",
+    nextBtnId: "preq6Next",
+    currentScreenId: "preq6",
+    nextScreenId: "begin1",
+    answerObject: preAnswers,
+    questionKey: "q6"
 });
 
     // --- Button Element Definitions ---
