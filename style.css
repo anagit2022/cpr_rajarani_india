@@ -281,6 +281,19 @@ display: flex;
     color:#666;
 
 }
+.questionInput.selected{
+
+    background:#B7E04B;
+
+    color:#F25C3B;
+
+}
+
+.questionInput.selected::placeholder{
+
+    color:#F25C3B;
+
+}
 
 
 /* ==============================
@@ -321,6 +334,13 @@ display: flex;
     user-select:none;
 
     transition:0.25s;
+
+}
+.questionButton.selected{
+
+    background:#B7E04B;
+
+    color:#F25C3B;
 
 }
 
