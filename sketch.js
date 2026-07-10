@@ -164,7 +164,63 @@ function showCompressionScore() {
     }
   });
 }
+// setup question function 
+function setupQuestion(config) {
 
+    const input = document.getElementById(config.inputId);
+    const notSure = document.getElementById(config.notSureId);
+    const nextBtn = document.getElementById(config.nextBtnId);
+    const currentScreen = document.getElementById(config.currentScreenId);
+    const nextScreen = document.getElementById(config.nextScreenId);
+
+    // User types
+    input.addEventListener("input", function () {
+
+        if (input.value.trim() !== "") {
+
+            input.classList.add("selected");
+            notSure.classList.remove("selected");
+
+        } else {
+
+            input.classList.remove("selected");
+
+        }
+
+    });
+
+    // Not Sure
+    function handleNotSure() {
+
+        config.answerObject[config.questionKey] = "Not sure";
+
+        input.value = "";
+
+        input.classList.remove("selected");
+
+        notSure.classList.add("selected");
+
+    }
+
+    notSure.addEventListener("click", handleNotSure);
+    notSure.addEventListener("touchstart", handleNotSure);
+
+    // Next
+    function handleNext() {
+
+        if (input.value.trim() !== "") {
+            config.answerObject[config.questionKey] = input.value;
+        }
+
+        currentScreen.style.display = "none";
+        nextScreen.style.display = "flex";
+
+    }
+
+    nextBtn.addEventListener("click", handleNext);
+    nextBtn.addEventListener("touchstart", handleNext);
+
+}
 window.onload = () => {
     // --- Screen Element Definitions ---
    const consent = document.getElementById("consent"); 
@@ -242,6 +298,17 @@ window.onload = () => {
     promiselateslowrajapress = document.getElementById("promiselateslowrajapress");
     promiselateslowrani = document.getElementById("promiselateslowrani");
     promiselateslowranipress = document.getElementById("promiselateslowranipress");
+    // setup quesions
+    //setup function call
+    setupQuestion({
+    inputId: "preq2input",
+    notSureId: "preq2NotSure",
+    nextBtnId: "preq2Next",
+    currentScreenId: "preq2",
+    nextScreenId: "preq3",
+    answerObject: preAnswers,
+    questionKey: "q2"
+});
 
     // --- Button Element Definitions ---
     const consentBtn = document.getElementById("consentBtn");
