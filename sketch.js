@@ -1,4 +1,22 @@
 let genderState = null;   // 1 = Raja, 0 = Rani
+// pre question answers
+let preAnswers = {
+    q1: "",
+    q2: "",
+    q3: "",
+    q4: "",
+    q5: "",
+    q6: ""
+};
+
+let postAnswers = {
+    q1: "",
+    q2: "",
+    q3: "",
+    q4: "",
+    q5: "",
+    q6: ""
+};
 let mic;
 let listeningForResponse = false;
 let responseTimeout = null;
@@ -149,7 +167,11 @@ function showCompressionScore() {
 
 window.onload = () => {
     // --- Screen Element Definitions ---
-   const consent = document.getElementById("consent");  
+   const consent = document.getElementById("consent"); 
+  const preq1 = document.getElementById("preq1");
+  const preq1input = document.getElementById("preq1input");
+  const preq1Next = document.getElementById("preq1Next");
+ const preq1NotSure = document.getElementById("preq1NotSure");
   const begin1 = document.getElementById("begin1");
     const gender = document.getElementById("gender");
     const intro = document.getElementById("intro");
@@ -365,11 +387,34 @@ window.onload = () => {
 
    const handleConsent = () => {
         consent.style.display = "none";
-        begin1.style.display = "flex";
+        preq1.style.display = "flex"
+        //begin1.style.display = "flex";
       //logSession();
     };
     consentBtn.onclick = handleConsent;
     consentBtn.addEventListener('touchstart', handleConsent);
+
+  const handlePreQ1Next = () => {
+
+    preAnswers.q1 = preq1input.value;
+
+    preq1.style.display = "none";
+    preq2.style.display = "flex";
+
+};
+  preq1Next.onclick = handlePreQ1Next;
+  preq1Next.addEventListener('touchstart', handlePreQ1Next);
+
+  const handlePreQ1NotSure = () => {
+
+    preAnswers.q1 = "Not sure";
+
+    preq1.style.display = "none";
+    preq2.style.display = "flex";
+
+};
+  preq1NotSure.onclick = handlePreQ1NotSure;
+  preq1Next.addEventListener('touchstart', handlePreQ1NotSure);
     
   const handleBegin = () => {
         userStartAudio();
