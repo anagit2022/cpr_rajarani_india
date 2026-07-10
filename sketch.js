@@ -1,3 +1,26 @@
+const questions = [
+
+"What is CPR?",
+
+"When should CPR be performed?",
+
+"Where do you start chest compressions on the victim?",
+
+"How fast should you press the chest?",
+
+"How much force should you put while pressing the chest?",
+
+"How long should you perform CPR?"
+
+];
+
+let questionnaireMode = "pre";
+
+let currentQuestion = 0;
+
+let preAnswers = [];
+
+let postAnswers = [];
 let genderState = null;   // 1 = Raja, 0 = Rani
 let mic;
 let listeningForResponse = false;
@@ -151,6 +174,13 @@ window.onload = () => {
     // --- Screen Element Definitions ---
    const consent = document.getElementById("consent");  
   const begin1 = document.getElementById("begin1");
+  // pre q
+  const questionnaire = document.getElementById("questionnaire");
+const questionText = document.getElementById("questionText");
+const answerInput = document.getElementById("answerInput");
+const nextQuestionBtn = document.getElementById("nextQuestionBtn");
+const notSureBtn = document.getElementById("notSureBtn");
+  //preqdone
     const gender = document.getElementById("gender");
     const intro = document.getElementById("intro");
     const checkdanger = document.getElementById("checkdanger");
@@ -365,11 +395,27 @@ window.onload = () => {
 
    const handleConsent = () => {
         consent.style.display = "none";
-        begin1.style.display = "flex";
-      //logSession();
+
+    questionnaire.style.display = "flex";
+
+    questionnaireMode = "pre";
+
+    currentQuestion = 0;
+
+    preAnswers = [];
+
+    showQuestion();
+
     };
     consentBtn.onclick = handleConsent;
     consentBtn.addEventListener('touchstart', handleConsent);
+  nextQuestionBtn.onclick = () => {
+    saveAnswer(answerInput.value);
+};
+
+notSureBtn.onclick = () => {
+    saveAnswer("Not sure");
+};
     
   const handleBegin = () => {
         userStartAudio();
@@ -1398,6 +1444,54 @@ async function logSession() {
     } catch (error) {
 
         console.error(error);
+
+    }
+
+}
+function showQuestion(){
+
+    questionText.innerHTML = questions[currentQuestion];
+
+    answerInput.value = "";
+
+}
+function saveAnswer(answer){
+
+    if(questionnaireMode==="pre"){
+
+        preAnswers.push(answer);
+
+    }
+
+    else{
+
+        postAnswers.push(answer);
+
+    }
+
+    currentQuestion++;
+
+    if(currentQuestion < questions.length){
+
+        showQuestion();
+
+    }
+
+    else{
+
+        questionnaire.style.display="none";
+
+        if(questionnaireMode==="pre"){
+
+            begin1.style.display="flex";
+
+        }
+
+        else{
+
+            // We'll connect this to your Promise Seal screen later.
+
+        }
 
     }
 
