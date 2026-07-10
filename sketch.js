@@ -433,9 +433,6 @@ preq1NotSure.addEventListener("click", function () {
 
     preAnswers.q1 = "Not sure";
 
-    preq1.style.display = "none";
-    preq2.style.display = "flex";
-
 };
   preq1NotSure.onclick = handlePreQ1NotSure;
   preq1Next.addEventListener('touchstart', handlePreQ1NotSure);
