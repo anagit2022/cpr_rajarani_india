@@ -214,7 +214,7 @@ display: flex;
 
 .questionBubble{
     position:absolute;
-    top:12%;
+    top:22%;
     left:50%;
     transform:translateX(-50%);
     width:min(88vw,360px);
