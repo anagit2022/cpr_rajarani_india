@@ -427,6 +427,144 @@ left: 5vw; }
     cursor: not-allowed;
     opacity: 0.5;
 }
+
+/* ==============================
+   QUESTION SCREEN
+   ============================== */
+
+#preq1,
+#preq2,
+#preq3,
+#preq4,
+#preq5,
+#preq6,
+#postq1,
+#postq2,
+#postq3,
+#postq4,
+#postq5,
+#postq6{
+    background:#F25C3B;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+
+/* ==============================
+   HERO
+   ============================== */
+
+#girl{
+    position:absolute;
+    top:4vh;
+    right:6vw;
+    width:22vw;
+    max-width:90px;
+}
+
+
+/* ==============================
+   QUESTION BUBBLE
+   ============================== */
+
+.questionBubble{
+    position:absolute;
+
+    top:18vh;
+
+    width:88vw;
+    max-width:360px;
+
+    height:auto;
+}
+
+
+/* ==============================
+   ANSWER INPUT
+   ============================== */
+
+.questionInput{
+
+    position:absolute;
+
+    top:48vh;
+
+    width:76vw;
+    max-width:300px;
+
+    height:58px;
+
+    padding:14px 18px;
+
+    border:none;
+
+    border-radius:16px;
+
+    font-size:22px;
+
+    font-family:'Albert Sans', sans-serif;
+
+    color:#444;
+
+    outline:none;
+
+    text-align:center;
+
+    background:white;
+
+    box-sizing:border-box;
+
+}
+
+
+/* Placeholder */
+
+.questionInput::placeholder{
+
+    color:#666;
+
+}
+
+
+/* ==============================
+   NOT SURE BUTTON
+   ============================== */
+
+.questionButton{
+
+    position:absolute;
+
+    top:63vh;
+
+    width:76vw;
+    max-width:300px;
+
+    cursor:pointer;
+
+}
+
+
+/* ==============================
+   NEXT BUTTON
+   ============================== */
+
+.nextQuestion{
+
+    position:absolute;
+
+    bottom:6vh;
+
+    right:10vw;
+
+    width:28vw;
+    max-width:130px;
+
+    cursor:pointer;
+
+}
 #p5Screen {
       width: 100vw;
       height: 100vh;
