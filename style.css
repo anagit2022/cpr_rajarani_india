@@ -171,7 +171,7 @@ display: flex;
   cursor: pointer;
 }
 #consentBtn {
-  margin-top: -60px;  /* pulls it up, closer to the bubble above */
+  margin-top: -64px;  /* pulls it up, closer to the bubble above */
 }
 #practiceagainbtn,#practiceagainbtnraja,#practiceagainbtnrani{
   position: absolute;
