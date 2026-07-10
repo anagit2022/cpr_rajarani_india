@@ -210,44 +210,73 @@ display: flex;
     max-width:90px;
 }
 
-/* QUESTION BUBBLE */
+/* Bubble */
+
 .questionBubble{
     position:absolute;
-    top:22vh;          /* was 18vh */
-    width:88vw;
-    max-width:360px;
-    height:auto;
+    top:12%;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(88vw,360px);
 }
 
-/* ANSWER INPUT */
+/* Group everything together */
+
+.questionContent{
+
+    position:absolute;
+
+    top:45%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(76vw,300px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:18px;
+}
+
+/* Input */
+
 .questionInput{
-    position:absolute;
-    top:46vh;          /* was 48vh */
-    width:76vw;
-    max-width:300px;
+
+    width:100%;
+
     height:58px;
-    /* rest unchanged */
+
+    border:none;
+
+    border-radius:16px;
+
+    padding:14px;
+
+    font-size:22px;
+
+    box-sizing:border-box;
 }
 
-/* I'M NOT SURE BUTTON */
+/* Buttons */
+
 .questionButton{
-    position:absolute;
-    top:56vh;          /* was 63vh */
-    width:76vw;
-    max-width:300px;
+
+    width:100%;
+
     cursor:pointer;
 }
 
-/* NEXT BUTTON */
 .nextQuestion{
-    position:absolute;
-    top:67vh;          /* use top instead of bottom */
-    right:10vw;
-    width:28vw;
-    max-width:130px;
+
+    width:120px;
+
     cursor:pointer;
 }
-
 .screen {
   display: none;
 }
