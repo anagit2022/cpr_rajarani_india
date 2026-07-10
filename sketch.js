@@ -228,7 +228,7 @@ window.onload = () => {
   const preq1input = document.getElementById("preq1input");
   const preq1Next = document.getElementById("preq1Next");
  const preq1NotSure = document.getElementById("preq1NotSure");
- const preq2 = document.getElementById("preq1");
+ const preq2 = document.getElementById("preq2");
   const begin1 = document.getElementById("begin1");
     const gender = document.getElementById("gender");
     const intro = document.getElementById("intro");
