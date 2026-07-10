@@ -532,17 +532,16 @@ const preq3 = document.getElementById("preq3");
   preq1Next.onclick = handlePreQ1Next;
   preq1Next.addEventListener('touchstart', handlePreQ1Next);
 
-  const handlePreQ1NotSure = () => {
+  const handlePreQ1Next = () => {
 
-    // save answer
-    preAnswers.q1 = "Not sure";
+    if (preq1input.value.trim() !== "") {
+        preAnswers.q1 = preq1input.value;
+    }
 
-    // clear input
-    preq1input.value = "";
-    preq1input.classList.remove("selected");
+    preq1.style.display = "none";
+    preq2.style.display = "flex";
 
-    // highlight button
-    preq1NotSure.classList.add("selected");
+    console.log(preAnswers.q1);
 };
 
 preq1NotSure.addEventListener("click", handlePreQ1NotSure);
