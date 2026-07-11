@@ -379,7 +379,7 @@ display: flex;
     left:32px;
 
     width:320px;
-    height:200px;
+    height:210px;
 
     background:white;
     border-radius:20px;
@@ -387,23 +387,23 @@ display: flex;
     box-sizing:border-box;
     padding:18px;
 
+    display:flex;
+    flex-direction:column;
 }
 
 .photoText{
 
     width:100%;
-    height:120px;
 
     border:none;
     outline:none;
-
     resize:none;
 
     font-family:"Albert Sans", sans-serif;
     font-size:18px;
-
     color:#222;
 
+    height:85px;
 }
 .cameraButton{
 
@@ -426,54 +426,50 @@ display: flex;
 
 }
 .photoPreviewContainer{
-    width:170px;
-    height:170px;
-    margin:20px auto 0 auto;
-    position:relative;
-}
-.photoPreview{
-    width:100%;
-    height:100%;
-    object-fit:cover;
 
-    border-radius:15px;
-    border:3px solid white;
-
-    display:block;
-}
-.photoPlaceholder{
-    width:100%;
-    height:100%;
-
-    border:3px dashed white;
-    border-radius:15px;
+    margin-top:12px;
 
     display:flex;
-    justify-content:center;
-    align-items:center;
+    justify-content:space-between;
+    align-items:flex-end;
+}
+.photoPreview{
 
-    color:white;
-    font-size:22px;
-    font-weight:bold;
+    width:90px;
+    height:90px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    display:none;
+}
+.photoPlaceholder{
+
+    width:90px;
+    height:90px;
+
+    border:2px dashed #cccccc;
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:14px;
+    color:#888;
 }
 .cameraBadge{
 
-    position:absolute;
+    width:54px;
+    height:54px;
 
-    bottom:-10px;
-    right:-10px;
-
-    width:55px;
-    height:55px;
-
-    border-radius:50%;
     border:none;
+    background:transparent;
 
-    font-size:28px;
+    font-size:42px;
 
     cursor:pointer;
-
-    background:white;
 }
 .screen {
   display: none;
