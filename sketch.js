@@ -654,6 +654,9 @@ preq1NotSure.addEventListener("touchstart", handlePreQ1NotSure);
 
     showPromiseScreen();
 };
+postq7Next.onclick = handlePostQ7Next;
+postq7Next.addEventListener("touchstart", handlePostQ7Next);
+    
   const handleBegin = () => {
         userStartAudio();
         mic.start();
