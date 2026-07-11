@@ -236,6 +236,11 @@ const preq3 = document.getElementById("preq3");
     // postq
     const postq1 = document.getElementById("postq1");
     const postq2 = document.getElementById("postq2");
+    const postq3 = document.getElementById("postq3");
+    const postq4 = document.getElementById("postq4");
+    const postq5 = document.getElementById("postq5");
+    const postq6 = document.getElementById("postq6");
+    
   const begin1 = document.getElementById("begin1");
     const gender = document.getElementById("gender");
     const intro = document.getElementById("intro");
@@ -377,6 +382,46 @@ const preq3 = document.getElementById("preq3");
     nextScreenId: "postq3",
     answerObject: postAnswers,
     questionKey: "q2"
+});
+    //postq3
+    setupQuestion({
+    inputId: "postq3input",
+    notSureId: "postq3NotSure",
+    nextBtnId: "postq3Next",
+    currentScreenId: "postq3",
+    nextScreenId: "postq4",
+    answerObject: postAnswers,
+    questionKey: "q3"
+});
+    //postq4
+    setupQuestion({
+    inputId: "postq4input",
+    notSureId: "postq4NotSure",
+    nextBtnId: "postq4Next",
+    currentScreenId: "postq4",
+    nextScreenId: "postq5",
+    answerObject: postAnswers,
+    questionKey: "q4"
+});
+    //postq5
+    setupQuestion({
+    inputId: "postq5input",
+    notSureId: "postq5NotSure",
+    nextBtnId: "postq5Next",
+    currentScreenId: "postq5",
+    nextScreenId: "postq6",
+    answerObject: postAnswers,
+    questionKey: "q5"
+});
+    //postq6
+    setupQuestion({
+    inputId: "postq6input",
+    notSureId: "postq6NotSure",
+    nextBtnId: "postq6Next",
+    currentScreenId: "postq6",
+    nextScreenId: "postq6",
+    answerObject: postAnswers,
+    questionKey: "q6"
 });
 
     // --- Button Element Definitions ---
