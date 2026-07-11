@@ -444,25 +444,40 @@
     <!-- Combined Answer + Photo -->
     <div class="photoCard">
 
-        <textarea
-            id="postq7input"
-            class="photoText"
-            placeholder="Type your answer here and take a picture of your dummy"></textarea>
+    <textarea
+        id="postq7input"
+        class="photoText"
+        placeholder="What is your promise?"></textarea>
+
+    <div class="photoPreviewContainer">
+
+        <img
+            id="postq7Preview"
+            class="photoPreview"
+            style="display:none;">
+
+        <div
+            id="photoPlaceholder"
+            class="photoPlaceholder">
+            No Photo
+        </div>
 
         <button
             id="postq7CameraBtn"
-            class="cameraButton">
+            class="cameraBadge">
             📷
         </button>
 
-        <input
-            type="file"
-            id="postq7CameraInput"
-            accept="image/*"
-            capture="environment"
-            style="display:none;">
-
     </div>
+
+    <input
+        type="file"
+        id="postq7CameraInput"
+        accept="image/*"
+        capture="environment"
+        style="display:none;">
+
+</div>
 
     <!-- Next -->
     <img
