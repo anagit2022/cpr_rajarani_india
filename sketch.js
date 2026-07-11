@@ -1828,13 +1828,23 @@ async function logSession() {
     preQ3: preAnswers.q3,
     preQ4: preAnswers.q4,
     preQ5: preAnswers.q5,
-    preQ6: preAnswers.q6
+    preQ6: preAnswers.q6,
+
+    postQ1: postAnswers.q1,
+    postQ2: postAnswers.q2,
+    postQ3: postAnswers.q3,
+    postQ4: postAnswers.q4,
+    postQ5: postAnswers.q5,
+    postQ6: postAnswers.q6,
+    postQ7: postAnswers.q7,
+
+    photo: photoBase64
 };
 
     console.log("Logging:", data);
 
     try {
-
+        console.log(data.photo.substring(0,80));
         const response = await fetch(scriptURL, {
             method: "POST",
             body: JSON.stringify(data)
