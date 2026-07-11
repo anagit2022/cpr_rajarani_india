@@ -19,6 +19,7 @@ let postAnswers = {
     q7: ""
 };
 let postQ7Photo = null;
+let photoBase64 = "";
 let mic;
 let listeningForResponse = false;
 let responseTimeout = null;
@@ -636,7 +637,7 @@ const handlePreQ1NotSure = () => {
 preq1NotSure.addEventListener("click", handlePreQ1NotSure);
 preq1NotSure.addEventListener("touchstart", handlePreQ1NotSure);
 
-    postq7CameraInput.addEventListener("change", (event) => {
+postq7CameraInput.addEventListener("change", (event) => {
 
     const file = event.target.files[0];
 
@@ -649,12 +650,17 @@ preq1NotSure.addEventListener("touchstart", handlePreQ1NotSure);
 
     reader.onload = function(e){
 
-        postq7Preview.src = e.target.result;
-        postq7Preview.style.display = "block";
+    // Save the image for uploading later
+    photoBase64 = e.target.result;
 
-        photoPlaceholder.style.display = "none";
+    // Show preview
+    postq7Preview.src = photoBase64;
+    postq7Preview.style.display = "block";
 
-    };
+    photoPlaceholder.style.display = "none";
+
+    console.log("Photo size:", photoBase64.length);
+};
 
     reader.readAsDataURL(file);
 
