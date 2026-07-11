@@ -29,6 +29,7 @@ let canvas;
 let canvasActive = false;
 let count=0;
 let currentState = "blank";
+let gameOutcome = "";
 let compression_count = 0;
 let now,interval;
 let lastTouchTime = 0;
@@ -644,6 +645,15 @@ preq1NotSure.addEventListener("touchstart", handlePreQ1NotSure);
     }
 
 });
+
+    const handlePostQ7Next = () => {
+
+    postAnswers.q7 = postq7Input.value;
+
+    logSession();
+
+    showPromiseScreen();
+};
   const handleBegin = () => {
         userStartAudio();
         mic.start();
@@ -1527,12 +1537,14 @@ function handle_performance() {
 
         if (diffGoal <= 5) {
             currentState = "win";
+            gameOutcome = "win";
             p5Screen.style.display = "none";
             win.style.display = "flex";
             winaud.play();
 
         } else if (diffGoal <= 8) {
             currentState = "aed";
+            gameOutcome = "aed";
             p5Screen.style.display = "none";
             aed.style.display = "flex";
             aedaud.play();
@@ -1540,6 +1552,7 @@ function handle_performance() {
 
         } else if (diffGoal <= 10) {
             currentState = "amb";
+            gameOutcome = "amb";
             p5Screen.style.display = "none";
             amb.style.display = "flex";
             ambaud.play();
@@ -1548,11 +1561,13 @@ function handle_performance() {
         } else if (diffGoal >= 20) {
             if (fastcount > slowcount) {
                 currentState = "latefast";
+                gameOutcome = "latefast";
                 p5Screen.style.display = "none";
                 latefast.style.display = "flex";
                 lateaud.play();
             } else if (slowcount > fastcount) {
                 currentState = "lateslow";
+                gameOutcome = "lateslow";
                 p5Screen.style.display = "none";
                 lateslow.style.display = "flex";
                 lateaud.play();
@@ -1560,6 +1575,190 @@ function handle_performance() {
         }
     }
   logSession();
+}
+function showWinPromise() {
+
+    promisewtaud.play();
+
+    if (genderState === 1) {
+
+        promisewraja.style.display = "flex";
+
+        setTimeout(() => {
+            promisewraja.style.display = "none";
+            promisewrajapress.style.display = "flex";
+        }, 2000);
+
+    } else {
+
+        promisewrani.style.display = "flex";
+
+        setTimeout(() => {
+            promisewrani.style.display = "none";
+            promisewranipress.style.display = "flex";
+        }, 2000);
+
+    }
+}
+
+function showAedPromise() {
+
+    promisewtaud.play();
+
+    if (genderState === 1) {
+
+        promiseaedraja.style.display = "flex";
+
+        setTimeout(() => {
+            promiseaedraja.style.display = "none";
+            promiseaedrajapress.style.display = "flex";
+        }, 2000);
+
+    } else {
+
+        promiseaedrani.style.display = "flex";
+
+        setTimeout(() => {
+            promiseaedrani.style.display = "none";
+            promiseaedranipress.style.display = "flex";
+        }, 2000);
+
+    }
+}
+
+function showAmbPromise() {
+
+    promisewtaud.play();
+
+    if (genderState === 1) {
+
+        promiseambraja.style.display = "flex";
+
+        setTimeout(() => {
+            promiseambraja.style.display = "none";
+            promiseambrajapress.style.display = "flex";
+        }, 2000);
+
+    } else {
+
+        promiseambrani.style.display = "flex";
+
+        setTimeout(() => {
+            promiseambrani.style.display = "none";
+            promiseambranipress.style.display = "flex";
+        }, 2000);
+
+    }
+}
+
+function showLateInactivePromise() {
+
+    promiseiltaud.play();
+
+    if (genderState === 1) {
+
+        promiselateinactiveraja.style.display = "flex";
+
+        setTimeout(() => {
+            promiselateinactiveraja.style.display = "none";
+            promiselateinactiverajapress.style.display = "flex";
+        }, 2000);
+
+    } else {
+
+        promiselateinactiverani.style.display = "flex";
+
+        setTimeout(() => {
+            promiselateinactiverani.style.display = "none";
+            promiselateinactiveranipress.style.display = "flex";
+        }, 2000);
+
+    }
+}
+
+function showLateFastPromise() {
+
+    promisefltaud.play();
+
+    if (genderState === 1) {
+
+        promiselatefastraja.style.display = "flex";
+
+        setTimeout(() => {
+            promiselatefastraja.style.display = "none";
+            promiselatefastrajapress.style.display = "flex";
+        }, 2000);
+
+    } else {
+
+        promiselatefastrani.style.display = "flex";
+
+        setTimeout(() => {
+            promiselatefastrani.style.display = "none";
+            promiselatefastranipress.style.display = "flex";
+        }, 2000);
+
+    }
+}
+
+function showLateSlowPromise() {
+
+    promisesltaud.play();
+
+    if (genderState === 1) {
+
+        promiselateslowraja.style.display = "flex";
+
+        setTimeout(() => {
+            promiselateslowraja.style.display = "none";
+            promiselateslowrajapress.style.display = "flex";
+        }, 2000);
+
+    } else {
+
+        promiselateslowrani.style.display = "flex";
+
+        setTimeout(() => {
+            promiselateslowrani.style.display = "none";
+            promiselateslowranipress.style.display = "flex";
+        }, 2000);
+
+    }
+}
+
+function showPromiseScreen() {
+
+    document.getElementById("postq7").style.display = "none";
+
+    switch (currentState) {
+
+        case "win":
+            showWinPromise();
+            break;
+
+        case "aed":
+            showAedPromise();
+            break;
+
+        case "amb":
+            showAmbPromise();
+            break;
+
+        case "lateinactive":
+            showLateInactivePromise();
+            break;
+
+        case "latefast":
+            showLateFastPromise();
+            break;
+
+        case "lateslow":
+            showLateSlowPromise();
+            break;
+
+        default:
+            console.log("Unknown outcome:", currentState);
+    }
 }
 // log session in google sheets
 async function logSession() {
