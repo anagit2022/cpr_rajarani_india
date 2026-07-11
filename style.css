@@ -35,7 +35,18 @@ align-items: center;
 justify-content: center; 
 position: relative; }
 
+.postHeading{
+    position:absolute;
 
+    top:55px;
+    left:32px;
+
+    color:white;
+
+    font-size:34px;
+    font-weight:700;
+    line-height:1.2;
+}
 #gender  {
   flex-direction: column;
   gap: 20px; /* space between image and buttons */
