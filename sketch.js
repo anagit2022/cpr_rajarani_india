@@ -1523,7 +1523,7 @@ function handle_inactivity() {
         p5Screen.style.display = "none";
         lateinactive.style.display = "flex";
         lateaud.play();
-      logSession();
+      //logSession();
     }
 }
 
@@ -1597,7 +1597,7 @@ function handle_performance() {
             }
         }
     }
-  logSession();
+  //logSession();
 }
 function showWinPromise() {
 
