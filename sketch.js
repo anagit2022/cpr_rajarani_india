@@ -247,7 +247,8 @@ const preq3 = document.getElementById("preq3");
     const postq7CameraBtn = document.getElementById("postq7CameraBtn");
     const postq7CameraInput = document.getElementById("postq7CameraInput");
     const postq7Input = document.getElementById("postq7input");
-    const postq7Thumbnail = document.getElementById("postq7Thumbnail");
+   const postq7Preview = document.getElementById("postq7Preview");
+const photoPlaceholder = document.getElementById("photoPlaceholder");
 const postq7Next = document.getElementById("postq7Next");
     postq7CameraBtn.onclick = () => {
 
@@ -641,16 +642,17 @@ preq1NotSure.addEventListener("touchstart", handlePreQ1NotSure);
 
     if (!file) return;
 
-    // Save the file
+    // Save the photo
     postQ7Photo = file;
 
-    // Display thumbnail
     const reader = new FileReader();
 
     reader.onload = function(e){
 
-        postq7Thumbnail.src = e.target.result;
-        postq7Thumbnail.style.display = "block";
+        postq7Preview.src = e.target.result;
+        postq7Preview.style.display = "block";
+
+        photoPlaceholder.style.display = "none";
 
     };
 
