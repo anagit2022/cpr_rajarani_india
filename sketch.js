@@ -17,6 +17,7 @@ let postAnswers = {
     q5: "",
     q6: ""
 };
+let postQ7Photo = null;
 let mic;
 let listeningForResponse = false;
 let responseTimeout = null;
@@ -240,8 +241,16 @@ const preq3 = document.getElementById("preq3");
     const postq4 = document.getElementById("postq4");
     const postq5 = document.getElementById("postq5");
     const postq6 = document.getElementById("postq6");
+    const postq7 = document.getElementById("postq7");
+    const postq7CameraBtn = document.getElementById("postq7CameraBtn");
+    const postq7CameraInput = document.getElementById("postq7CameraInput");
+    postq7CameraBtn.onclick = () => {
+
+    postq7CameraInput.click();
+
+};
     
-  const begin1 = document.getElementById("begin1");
+    const begin1 = document.getElementById("begin1");
     const gender = document.getElementById("gender");
     const intro = document.getElementById("intro");
     const checkdanger = document.getElementById("checkdanger");
@@ -419,9 +428,19 @@ const preq3 = document.getElementById("preq3");
     notSureId: "postq6NotSure",
     nextBtnId: "postq6Next",
     currentScreenId: "postq6",
-    nextScreenId: "postq6",
+    nextScreenId: "postq7",
     answerObject: postAnswers,
     questionKey: "q6"
+});
+    //postq7
+    setupQuestion({
+    inputId: "postq7input",
+    notSureId: "postq7NotSure",
+    nextBtnId: "postq7Next",
+    currentScreenId: "postq7",
+    nextScreenId: "postq7",
+    answerObject: postAnswers,
+    questionKey: "q7"
 });
 
     // --- Button Element Definitions ---
@@ -619,6 +638,18 @@ const handlePreQ1NotSure = () => {
 
 preq1NotSure.addEventListener("click", handlePreQ1NotSure);
 preq1NotSure.addEventListener("touchstart", handlePreQ1NotSure);
+
+    postq7CameraInput.addEventListener("change", function(){
+
+    if(this.files.length > 0){
+
+        postQ7Photo = this.files[0];
+
+        console.log(postQ7Photo);
+
+    }
+
+});
   const handleBegin = () => {
         userStartAudio();
         mic.start();
