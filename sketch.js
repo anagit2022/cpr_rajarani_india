@@ -15,7 +15,8 @@ let postAnswers = {
     q3: "",
     q4: "",
     q5: "",
-    q6: ""
+    q6: "",
+    q7: ""
 };
 let postQ7Photo = null;
 let mic;
@@ -244,6 +245,8 @@ const preq3 = document.getElementById("preq3");
     const postq7 = document.getElementById("postq7");
     const postq7CameraBtn = document.getElementById("postq7CameraBtn");
     const postq7CameraInput = document.getElementById("postq7CameraInput");
+    const postq7Input = document.getElementById("postq7input");
+const postq7Next = document.getElementById("postq7Next");
     postq7CameraBtn.onclick = () => {
 
     postq7CameraInput.click();
@@ -432,16 +435,7 @@ const preq3 = document.getElementById("preq3");
     answerObject: postAnswers,
     questionKey: "q6"
 });
-    //postq7
-    setupQuestion({
-    inputId: "postq7input",
-    notSureId: "postq7NotSure",
-    nextBtnId: "postq7Next",
-    currentScreenId: "postq7",
-    nextScreenId: "postq7",
-    answerObject: postAnswers,
-    questionKey: "q7"
-});
+   
 
     // --- Button Element Definitions ---
     const consentBtn = document.getElementById("consentBtn");
