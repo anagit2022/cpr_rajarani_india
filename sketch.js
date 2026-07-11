@@ -63,7 +63,7 @@ let lastTouchElapsed = 0;
 let breathc = 0;
 let couldobserveb;
 // log data google app script
-const scriptURL = "https://script.google.com/macros/s/AKfycbygqff9RJ6GnJyVJJ5WHOrKr_0bSps935NByi-5t9GrJBuO51yeOOU2hFJ83a8VXzdn/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbynsGNNdynT2YybEsUAMbjIG1xfg-N7-Nd-WznZ5luTkEka9ox59BJl7aRzGr1r-eyc/exec";
 let sessionLogged = false;
 // play screen
 let playimg,heartimg,meterimg,arrowimg;
@@ -1811,6 +1811,7 @@ async function logSession() {
     }
 
     const data = {
+
     date: now.toLocaleDateString(),
     time: now.toLocaleTimeString(),
 
@@ -1823,6 +1824,7 @@ async function logSession() {
     goodCompressions: good_compression,
     targetCompressions: maxTotalCompressions,
 
+    // PRE QUESTIONS
     preQ1: preAnswers.q1,
     preQ2: preAnswers.q2,
     preQ3: preAnswers.q3,
@@ -1830,6 +1832,7 @@ async function logSession() {
     preQ5: preAnswers.q5,
     preQ6: preAnswers.q6,
 
+    // POST QUESTIONS
     postQ1: postAnswers.q1,
     postQ2: postAnswers.q2,
     postQ3: postAnswers.q3,
@@ -1838,6 +1841,7 @@ async function logSession() {
     postQ6: postAnswers.q6,
     postQ7: postAnswers.q7,
 
+    // PHOTO
     photo: photoBase64
 };
 
