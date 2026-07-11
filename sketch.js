@@ -233,6 +233,9 @@ const preq3 = document.getElementById("preq3");
     const preq4 = document.getElementById("preq4");
     const preq5 = document.getElementById("preq5");
     const preq6 = document.getElementById("preq6");
+    // postq
+    const postq1 = document.getElementById("postq1");
+    const postq2 = document.getElementById("postq2");
   const begin1 = document.getElementById("begin1");
     const gender = document.getElementById("gender");
     const intro = document.getElementById("intro");
@@ -353,6 +356,27 @@ const preq3 = document.getElementById("preq3");
     nextScreenId: "begin1",
     answerObject: preAnswers,
     questionKey: "q6"
+});
+    // postq setup questions
+    //setup function postq1
+    setupQuestion({
+    inputId: "postq1input",
+    notSureId: "postq1NotSure",
+    nextBtnId: "postq1Next",
+    currentScreenId: "postq1",
+    nextScreenId: "postq2",
+    answerObject: postAnswers,
+    questionKey: "q1"
+});
+    //postq2
+    setupQuestion({
+    inputId: "postq2input",
+    notSureId: "postq2NotSure",
+    nextBtnId: "postq2Next",
+    currentScreenId: "postq2",
+    nextScreenId: "postq3",
+    answerObject: postAnswers,
+    questionKey: "q2"
 });
 
     // --- Button Element Definitions ---
@@ -1000,23 +1024,14 @@ preq1NotSure.addEventListener("touchstart", handlePreQ1NotSure);
 
     // --- End Screen Buttons ---
 
+    
     const handleNextWin = () => {
-        win.style.display = "none";
-        promisewtaud.play();
-        if (genderState === 1) {
-            promisewraja.style.display = "flex";
-            setTimeout(() => {
-                promisewraja.style.display = "none";
-                promisewrajapress.style.display = "flex";
-            }, 2000);
-        } else if (genderState === 0) {
-            promisewrani.style.display = "flex";
-            setTimeout(() => {
-                promisewrani.style.display = "none";
-                promisewranipress.style.display = "flex";
-            }, 2000);
-        }
-    };
+
+    win.style.display = "none";
+
+    postq1.style.display = "flex";
+
+};
     nextwinBtn.onclick = handleNextWin;
     nextwinBtn.addEventListener('touchstart', handleNextWin);
 
@@ -1066,23 +1081,15 @@ preq1NotSure.addEventListener("touchstart", handlePreQ1NotSure);
     practiceagainbtnrani.onclick = handlePracticeAgainRani;
     practiceagainbtnrani.addEventListener('touchstart', handlePracticeAgainRani);
 
+
     const handleNextAmb = () => {
-        promisewtaud.play();
-        amb.style.display = "none";
-        if (genderState === 1) {
-            promiseambraja.style.display = "flex";
-            setTimeout(() => {
-                promiseambraja.style.display = "none";
-                promiseambrajapress.style.display = "flex";
-            }, 2000);
-        } else if (genderState === 0) {
-            promiseambrani.style.display = "flex";
-            setTimeout(() => {
-                promiseambrani.style.display = "none";
-                promiseambranipress.style.display = "flex";
-            }, 2000);
-        }
-    };
+
+    amb.style.display = "none";
+
+    postq1.style.display = "flex";
+
+};
+    
     nextambBtn.onclick = handleNextAmb;
     nextambBtn.addEventListener('touchstart', handleNextAmb);
 
@@ -1106,23 +1113,14 @@ preq1NotSure.addEventListener("touchstart", handlePreQ1NotSure);
     promiseambrajapress.onclick = handleAmbRajaPromisePress;
     promiseambrajapress.addEventListener('touchstart', handleAmbRajaPromisePress);
 
+
     const handleNextAed = () => {
-        aed.style.display = "none";
-        promisewtaud.play();
-        if (genderState === 1) {
-            promiseaedraja.style.display = "flex";
-            setTimeout(() => {
-                promiseaedraja.style.display = "none";
-                promiseaedrajapress.style.display = "flex";
-            }, 2000);
-        } else if (genderState === 0) {
-            promiseaedrani.style.display = "flex";
-            setTimeout(() => {
-                promiseaedrani.style.display = "none";
-                promiseaedranipress.style.display = "flex";
-            }, 2000);
-        }
-    };
+
+    aed.style.display = "none";
+
+    postq1.style.display = "flex";
+
+};
     nextaedBtn.onclick = handleNextAed;
     nextaedBtn.addEventListener('touchstart', handleNextAed);
 
@@ -1146,23 +1144,14 @@ preq1NotSure.addEventListener("touchstart", handlePreQ1NotSure);
     promiseaedrajapress.onclick = handleAedRajaPromisePress;
     promiseaedrajapress.addEventListener('touchstart', handleAedRajaPromisePress);
 
+
     const handleNextLateInactive = () => {
-        lateinactive.style.display = "none";
-        promiseiltaud.play();
-        if (genderState === 1) {
-            promiselateinactiveraja.style.display = "flex";
-            setTimeout(() => {
-                promiselateinactiveraja.style.display = "none";
-                promiselateinactiverajapress.style.display = "flex";
-            }, 2000);
-        } else if (genderState === 0) {
-            promiselateinactiverani.style.display = "flex";
-            setTimeout(() => {
-                promiselateinactiverani.style.display = "none";
-                promiselateinactiveranipress.style.display = "flex";
-            }, 2000);
-        }
-    };
+
+    lateinactive.style.display = "none";
+
+    postq1.style.display = "flex";
+
+};
     nextlateinactiveBtn.onclick = handleNextLateInactive;
     nextlateinactiveBtn.addEventListener('touchstart', handleNextLateInactive);
 
@@ -1189,23 +1178,14 @@ preq1NotSure.addEventListener("touchstart", handlePreQ1NotSure);
     // NOTE: showCompressionScore() is now called inside handle_performance()
     // so these button handlers no longer need to call it themselves.
 
+
     const handleNextLateFast = () => {
-        latefast.style.display = "none";
-        promisefltaud.play();
-        if (genderState === 1) {
-            promiselatefastraja.style.display = "flex";
-            setTimeout(() => {
-                promiselatefastraja.style.display = "none";
-                promiselatefastrajapress.style.display = "flex";
-            }, 2000);
-        } else if (genderState === 0) {
-            promiselatefastrani.style.display = "flex";
-            setTimeout(() => {
-                promiselatefastrani.style.display = "none";
-                promiselatefastranipress.style.display = "flex";
-            }, 2000);
-        }
-    };
+
+    latefast.style.display = "none";
+
+    postq1.style.display = "flex";
+
+};
     nextlatefastBtn.onclick = handleNextLateFast;
     nextlatefastBtn.addEventListener('touchstart', handleNextLateFast);
 
@@ -1229,23 +1209,14 @@ preq1NotSure.addEventListener("touchstart", handlePreQ1NotSure);
     promiselatefastrajapress.onclick = handleLateFastRajaPromisePress;
     promiselatefastrajapress.addEventListener('touchstart', handleLateFastRajaPromisePress);
 
+
     const handleNextLateSlow = () => {
-        lateslow.style.display = "none";
-        promisesltaud.play();
-        if (genderState === 1) {
-            promiselateslowraja.style.display = "flex";
-            setTimeout(() => {
-                promiselateslowraja.style.display = "none";
-                promiselateslowrajapress.style.display = "flex";
-            }, 2000);
-        } else if (genderState === 0) {
-            promiselateslowrani.style.display = "flex";
-            setTimeout(() => {
-                promiselateslowrani.style.display = "none";
-                promiselateslowranipress.style.display = "flex";
-            }, 2000);
-        }
-    };
+
+    lateslow.style.display = "none";
+
+    postq1.style.display = "flex";
+
+};
     nextlateslowBtn.onclick = handleNextLateSlow;
     nextlateslowBtn.addEventListener('touchstart', handleNextLateSlow);
 
