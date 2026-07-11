@@ -504,14 +504,14 @@ const postq7Next = document.getElementById("postq7Next");
     const deleteBtnDial = document.getElementById("deleteBtnDial"); 
 
     const checkCallButtonState = () => {
-        if (dialedNumber === "112") {
-            callBtn.disabled = false;
-            callBtn.style.opacity = 1.0; 
-        } else {
-            callBtn.disabled = true;
-            callBtn.style.opacity = 0.5; 
-        }
-    };
+    if (dialedNumber === "112" || dialedNumber === "108") {
+        callBtn.disabled = false;
+        callBtn.style.opacity = 1.0;
+    } else {
+        callBtn.disabled = true;
+        callBtn.style.opacity = 0.5;
+    }
+};
 
     const addDigit = (digit) => {
         dial.play();
@@ -527,7 +527,7 @@ const postq7Next = document.getElementById("postq7Next");
         if (e) e.preventDefault();
         dialedNumber = dialedNumber.slice(0, -1);
         if (dialedNumber.length === 0) {
-            dialDisplay.textContent = "112";
+            dialDisplay.textContent = "112/108";
             dialDisplay.classList.add("empty"); 
         } else {
             dialDisplay.textContent = dialedNumber;
@@ -560,7 +560,7 @@ const postq7Next = document.getElementById("postq7Next");
     deleteBtnDial.addEventListener('touchstart', deleteDigit);
 
     checkCallButtonState();
-    dialDisplay.textContent = "112";
+    dialDisplay.textContent = "112/108";
     dialDisplay.classList.add("empty"); 
 
     // ========================================
