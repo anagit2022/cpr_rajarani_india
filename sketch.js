@@ -1866,6 +1866,7 @@ async function logSession() {
 
 }
 function reset() {
+
     play_start_time = millis();
     good_compression = 0;
     compression_count = 0;
@@ -1887,12 +1888,55 @@ function reset() {
     play_elapsed = 0;
     breath_no = floor(random(11));
     dialedNumber = '';
+
     maxTotalCompressions = floor(random(30, 50));
     task_time = 600 * maxTotalCompressions + 3000;
-    currentState = "blank";
-  sessionLogged = false;
-}
 
+    currentState = "blank";
+
+    sessionLogged = false;
+
+    // -------------------------
+    // Reset pre-question answers
+    // -------------------------
+    preAnswers = {
+        q1: "",
+        q2: "",
+        q3: "",
+        q4: "",
+        q5: "",
+        q6: ""
+    };
+
+    // -------------------------
+    // Reset post-question answers
+    // -------------------------
+    postAnswers = {
+        q1: "",
+        q2: "",
+        q3: "",
+        q4: "",
+        q5: "",
+        q6: "",
+        q7: ""
+    };
+
+    // -------------------------
+    // Reset photo
+    // -------------------------
+    photoBase64 = "";
+    postQ7Photo = null;
+
+    // -------------------------
+    // Clear UI
+    // -------------------------
+    postq7Input.value = "";
+
+    postq7Preview.src = "";
+    postq7Preview.style.display = "none";
+
+    photoPlaceholder.style.display = "flex";
+}
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
 }
