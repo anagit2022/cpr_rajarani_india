@@ -212,12 +212,16 @@ function setupQuestion(config) {
     // Next
     function handleNext() {
 
-        if (input.value.trim() !== "") {
-            config.answerObject[config.questionKey] = input.value;
-        }
+        console.log("Before:", config.answerObject[config.questionKey]);
 
-        currentScreen.style.display = "none";
-        nextScreen.style.display = "flex";
+    if (input.value.trim() !== "") {
+        config.answerObject[config.questionKey] = input.value;
+    }
+
+    console.log("After:", config.answerObject[config.questionKey]);
+
+    currentScreen.style.display = "none";
+    nextScreen.style.display = "flex";
 
     }
 
