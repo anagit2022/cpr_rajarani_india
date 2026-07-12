@@ -1936,6 +1936,15 @@ function reset() {
     postq7Preview.style.display = "none";
 
     photoPlaceholder.style.display = "flex";
+    // Reset all question inputs and buttons
+document.querySelectorAll(".questionInput").forEach(input => {
+    input.value = "";
+    input.classList.remove("selected");
+});
+
+document.querySelectorAll(".questionButton").forEach(btn => {
+    btn.classList.remove("selected");
+});
 }
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
