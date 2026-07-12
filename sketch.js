@@ -212,13 +212,11 @@ function setupQuestion(config) {
     // Next
     function handleNext() {
 
-        console.log("Before:", config.answerObject[config.questionKey]);
+        config.answerObject[config.questionKey] = input.value.trim();
 
-    if (input.value.trim() !== "") {
-        config.answerObject[config.questionKey] = input.value;
+    if (notSure.classList.contains("selected")) {
+        config.answerObject[config.questionKey] = "Not sure";
     }
-
-    console.log("After:", config.answerObject[config.questionKey]);
 
     currentScreen.style.display = "none";
     nextScreen.style.display = "flex";
